@@ -1,0 +1,114 @@
+{
+  "tracks": [
+    {
+      "name": "night_bus",
+      "file": "night_bus.wav",
+      "seconds": 29.5385,
+      "title": "Night Bus",
+      "title_ko": "심야버스",
+      "style": "Lo-fi 2-step garage",
+      "bpm": 130,
+      "bars": 16,
+      "key": "F minor"
+    },
+    {
+      "name": "konbini",
+      "file": "konbini.wav",
+      "seconds": 48.0,
+      "title": "Konbini 3am",
+      "title_ko": "편의점 새벽 3시",
+      "style": "Lo-fi hip hop",
+      "bpm": 80,
+      "bars": 16,
+      "key": "D dorian"
+    },
+    {
+      "name": "road_trip",
+      "file": "road_trip.wav",
+      "seconds": 33.1034,
+      "title": "Road Trip",
+      "title_ko": "드라이브 가는 길",
+      "style": "Lo-fi folk pop",
+      "bpm": 116,
+      "bars": 16,
+      "key": "D major"
+    },
+    {
+      "name": "sunny_shore",
+      "file": "sunny_shore.wav",
+      "seconds": 51.2,
+      "title": "Sunny Shore",
+      "title_ko": "맑은 해변",
+      "style": "Lo-fi reggae",
+      "bpm": 75,
+      "bars": 16,
+      "key": "G major"
+    },
+    {
+      "name": "sunshine_dance",
+      "file": "sunshine_dance.wav",
+      "seconds": 35.5556,
+      "title": "Sunshine Dance",
+      "title_ko": "햇살 댄스",
+      "style": "Lo-fi afrobeats",
+      "bpm": 108,
+      "bars": 16,
+      "key": "A major"
+    },
+    {
+      "name": "morning_radio",
+      "file": "morning_radio.wav",
+      "seconds": 34.2857,
+      "title": "Morning Radio",
+      "title_ko": "아침 라디오",
+      "style": "Lo-fi platformer",
+      "bpm": 112,
+      "bars": 16,
+      "key": "C major"
+    },
+    {
+      "name": "sakura_drift",
+      "file": "sakura_drift.wav",
+      "seconds": 43.6364,
+      "title": "Sakura Drift",
+      "title_ko": "벚꽃 바람",
+      "style": "Japanese lo-fi",
+      "bpm": 88,
+      "bars": 16,
+      "key": "D minor (in scale)"
+    },
+    {
+      "name": "neon_chase",
+      "file": "neon_chase.wav",
+      "seconds": 44.6512,
+      "title": "Neon Chase",
+      "title_ko": "네온 추격전",
+      "style": "Lo-fi drum and bass",
+      "bpm": 172,
+      "bars": 32,
+      "key": "E minor"
+    },
+    {
+      "name": "rooftop_arcade",
+      "file": "rooftop_arcade.wav",
+      "seconds": 31.4754,
+      "title": "Rooftop Arcade",
+      "title_ko": "옥상 오락실",
+      "style": "Lo-fi house",
+      "bpm": 122,
+      "bars": 16,
+      "key": "A minor"
+    },
+    {
+      "name": "best",
+      "file": "best.wav",
+      "seconds": 40.0,
+      "title": "Best",
+      "title_ko": "최고야",
+      "style": "Lo-fi hip hop on Dom's tune",
+      "bpm": 72,
+      "bars": 12,
+      "key": "A major"
+    }
+  ]
+}

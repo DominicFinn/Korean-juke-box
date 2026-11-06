@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+
+# Recordings stay on this machine; only the tracks made from them are shared
+inbox/*
+!inbox/README.md
+
+# Three-loops-back-to-back previews, made by render.py --preview
+out/preview/
+
+# Jukebox build output
+jukebox/.build/
+jukebox/build/
