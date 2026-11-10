@@ -1,5 +1,7 @@
 # Lofi Jukebox
 
+![The jukebox playing, with Oreo and Milo on the windowsill](../docs/screenshots/playing.png)
+
 A little Mac app, 아빠의 멋진 로파이 앱 (Dad's Cool Lofi App), that plays the loops in `../out` like a jukebox. All its text is in Korean, with each tape's English name underneath. Each tape plays a set number of times, then crossfades into the next. Oreo and Milo, the Finn cats (also in Seoul Sisters), sit on the windowsill and bounce along in time, and doze off when it's paused.
 
 ## Build and run
@@ -26,4 +28,4 @@ open "build/Lofi Jukebox.app"
 - `Scene/`: the window scene. SwiftUI paints the still parts once into images, and Core Animation runs everything that moves (rain particles, the cats' beat-synced bounce, twinkling, flickering windows), so the app idles at around 1.5% CPU while it plays. The neon glow follows the music ten times a second.
 - `Deck/`, `Shelf/`, `Theme/`: the cassette, the tape shelf, and the comic styling. Korean text uses Apple SD Gothic Neo and AppleMyungjo, which come with macOS.
 
-`--snapshot <file.png>` saves a picture of the window after a few seconds and quits, which is useful for checking layout changes. It shows animations at rest, so the rain and notes don't appear.
+`--snapshot <file.png>` saves a picture of the window after a few seconds and quits; it's how the screenshots in `docs/screenshots` were made. Add `--paused` for the sleeping cats and `--delay <seconds>` to wait longer. Particles don't show up in a window capture, so snapshots put in a still of the rain and the notes or z's instead.

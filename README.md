@@ -1,8 +1,26 @@
-# music-electro
+<p align="center"><img src="docs/screenshots/icon.png" width="128" alt="App icon: a pink cassette with Oreo the cat peeking over the top"></p>
 
-Lo-fi electronic loops for games, synthesised in Python. There are no samples: every drum, key and vocal chop is generated, so each track is a script you can change and re-render.
+# Korean Jukebox
 
-## Setup
+A little Mac jukebox, 아빠의 멋진 로파이 앱 ("Dad's Cool Lofi App"), that plays lo-fi loops made for games. Oreo and Milo, the Finn cats, sit on the windowsill watching a rainy city and bounce along in time to whatever's playing, then curl up and doze when it's paused. All the writing in the app is Korean, with each tape's English name underneath.
+
+The music is synthesised in Python. There are no samples: every drum, chord and melody is generated, so each track is a script you can change and re-render, and every loop is seamless so it drops straight into a game.
+
+![The jukebox playing Night Bus (심야버스), with Oreo and Milo watching the rainy city](docs/screenshots/playing.png)
+
+![Paused, with the cats curled up asleep](docs/screenshots/paused.png)
+
+## Running the jukebox
+
+```
+cd jukebox
+./build.sh
+open "build/Lofi Jukebox.app"
+```
+
+It needs macOS 14 or later and Xcode 16 or later. The tapes are already rendered in `out/`, so it plays straight away and picks up anything you render later. [jukebox/README.md](jukebox/README.md) explains how it works.
+
+## Making tracks
 
 ```
 python3 -m venv .venv
@@ -43,15 +61,15 @@ Drop any audio or video file into `inbox/` (a Voice Memos `.m4a` is fine) and th
 
 ## Tracks
 
-| Track | Style | BPM | Key | Bars | Length |
-| --- | --- | --- | --- | --- | --- |
-| night_bus | Lo-fi 2-step garage | 130 | F minor | 16 | 29.5s |
-| konbini | Lo-fi hip hop with rain | 80 | D dorian | 16 | 48.0s |
-| road_trip | Lo-fi folk pop, strummed guitars and whistling | 116 | D major | 16 | 33.1s |
-| sunny_shore | Lo-fi reggae, one drop and dub echoes | 75 | G major | 16 | 51.2s |
-| sunshine_dance | Lo-fi afrobeats with highlife guitar and horns | 108 | A major | 16 | 35.6s |
-| morning_radio | Bouncy platformer tune through a kitchen radio | 112 | C major | 16 | 34.3s |
-| sakura_drift | Japanese lo-fi with koto and bamboo flute | 88 | D minor (in scale) | 16 | 43.6s |
-| neon_chase | Lo-fi liquid drum and bass | 172 | E minor | 32 | 44.7s |
-| rooftop_arcade | Lo-fi house with filtered organ | 122 | A minor | 16 | 31.5s |
-| best | Lo-fi hip hop on a tune transcribed from inbox/Best.m4a | 72 | A major | 12 | 40.0s |
+| Track | Korean title | Style | BPM | Key | Bars | Length |
+| --- | --- | --- | --- | --- | --- | --- |
+| night_bus | 심야버스 | Lo-fi 2-step garage | 130 | F minor | 16 | 29.5s |
+| konbini | 편의점 새벽 3시 | Lo-fi hip hop with rain | 80 | D dorian | 16 | 48.0s |
+| road_trip | 드라이브 가는 길 | Lo-fi folk pop, strummed guitars and whistling | 116 | D major | 16 | 33.1s |
+| sunny_shore | 맑은 해변 | Lo-fi reggae, one drop and dub echoes | 75 | G major | 16 | 51.2s |
+| sunshine_dance | 햇살 댄스 | Lo-fi afrobeats with highlife guitar and horns | 108 | A major | 16 | 35.6s |
+| morning_radio | 아침 라디오 | Bouncy platformer tune through a kitchen radio | 112 | C major | 16 | 34.3s |
+| sakura_drift | 벚꽃 바람 | Lo-fi with koto and bamboo flute | 88 | D minor (in scale) | 16 | 43.6s |
+| neon_chase | 네온 추격전 | Lo-fi liquid drum and bass | 172 | E minor | 32 | 44.7s |
+| rooftop_arcade | 옥상 오락실 | Lo-fi house with filtered organ | 122 | A minor | 16 | 31.5s |
+| best | 최고야 | Lo-fi hip hop on a tune transcribed from a voice memo | 72 | A major | 12 | 40.0s |

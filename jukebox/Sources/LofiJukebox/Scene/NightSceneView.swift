@@ -307,6 +307,52 @@ final class NightSceneView: NSView {
         }
     }
 
+    /// AppKit's window capture, which --snapshot uses, leaves particles out. This adds a
+    /// still of the rain, and of the notes or the z's, so pictures look like the real thing.
+    func showStillParticles() {
+        guard builtSize != .zero else { return }
+        let layout = SceneLayout(size: bounds.size)
+        let scale = window?.backingScaleFactor ?? 2
+
+        var random = SeededRandom(seed: 99)
+        let streaks = CGMutablePath()
+        for _ in 0..<130 {
+            let x = Double.random(in: -0.05...1.15, using: &random) * bounds.width
+            let y = Double.random(in: 0...1, using: &random) * layout.sillTop
+            let length = Double.random(in: 8...22, using: &random)
+            streaks.move(to: flip(CGPoint(x: x, y: y)))
+            streaks.addLine(to: flip(CGPoint(x: x - length * 0.16, y: y + length)))
+        }
+        let rainfall = CAShapeLayer()
+        rainfall.frame = bounds
+        rainfall.path = streaks
+        rainfall.strokeColor = NSColor(Palette.rain).withAlphaComponent(0.35).cgColor
+        rainfall.lineWidth = 1.2
+        rainfall.lineCap = .round
+        root.insertSublayer(rainfall, above: rain)
+
+        let head = layout.catHead
+        let glyphs: [(text: String, at: CGPoint, size: Double, opacity: Float)] = state.isPlaying
+            ? [("♪", CGPoint(x: head.x + 34, y: head.y - 16), 17, 1),
+               ("♫", CGPoint(x: head.x + 50, y: head.y - 46), 17, 0.75),
+               ("♪", CGPoint(x: head.x + 64, y: head.y - 78), 17, 0.45)]
+            : [("z", CGPoint(x: head.x - 28, y: head.y + 38), 12, 0.9),
+               ("z", CGPoint(x: head.x - 40, y: head.y + 18), 15, 0.7),
+               ("z", CGPoint(x: head.x - 54, y: head.y - 6), 19, 0.5)]
+        for glyph in glyphs {
+            let font: Font = glyph.text == "z" ? .custom("AppleSDGothicNeo-Medium", size: glyph.size)
+                                               : .system(size: glyph.size, weight: .bold)
+            guard let image = SceneArt.glyph(glyph.text, font: font, color: Palette.moon, scale: scale) else { continue }
+            let mark = CALayer()
+            mark.contents = image
+            mark.contentsScale = scale
+            mark.bounds = CGRect(x: 0, y: 0, width: Double(image.width) / scale, height: Double(image.height) / scale)
+            mark.position = flip(glyph.at)
+            mark.opacity = glyph.opacity
+            root.addSublayer(mark)
+        }
+    }
+
     // MARK: State
 
     private func apply(fade: Bool) {

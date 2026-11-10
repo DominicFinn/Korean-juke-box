@@ -2,10 +2,12 @@ import SwiftUI
 
 struct LofiJukeboxApp: App {
     @State private var library = TrackLibrary()
-    @State private var player = Player()
+    @State private var player: Player
 
     init() {
-        DebugSnapshot.scheduleIfRequested()
+        let player = Player()
+        _player = State(initialValue: player)
+        DebugSnapshot.scheduleIfRequested(player: player)
     }
 
     var body: some Scene {
